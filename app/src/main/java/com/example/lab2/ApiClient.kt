@@ -35,7 +35,7 @@ interface ApiClient {
             .create(ApiClient::class.java)
     }
 
-    @GET("lab2_1.php")
+    @GET("lab2.1.php")
     fun getApiLab2_1(@Query("name") name: String, @Query("score") score: String ): Call<ResponseBody>
 
     @GET("lab2.2.php")
