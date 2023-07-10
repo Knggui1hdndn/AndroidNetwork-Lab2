@@ -10,6 +10,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Field
+import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
@@ -46,11 +47,12 @@ interface ApiClient {
         @Query("length") length: String,
         @Query("width") width: String
     ): Call<ResponseBody>
-
+    @FormUrlEncoded
     @POST("lab2.3.php")
     fun getApiLab2_3(
         @Field("canh") canh: String,
     ): Call<ResponseBody>
+    @FormUrlEncoded
     @POST("lab2.4.php")
     fun getApiLab2_4(
         @Field("a") a: String,
