@@ -1,7 +1,7 @@
 <?php
 
 // Read the GET parameters
-$canh = $_POST ['width'];
+$canh = $_POST ['canh'];
 $thetich = pow($canh, 3) ;
 
  
