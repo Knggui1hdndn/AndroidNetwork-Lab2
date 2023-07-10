@@ -14,11 +14,17 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
         with(binding) {
-             btn1.setOnClickListener {
-                startActivity(Intent(this@MainActivity,Lab2_1::class.java))
+            btn1.setOnClickListener {
+                startActivity(Intent(this@MainActivity, Lab2_1::class.java))
             }
             btn2.setOnClickListener {
-                startActivity(Intent(this@MainActivity,Lab2_2::class.java))
+                startActivity(Intent(this@MainActivity, Lab2_2::class.java))
+            }
+            btn3.setOnClickListener {
+                startActivity(Intent(this@MainActivity, Lab2_3::class.java))
+            }
+            btn4.setOnClickListener {
+                startActivity(Intent(this@MainActivity, Lab2_4::class.java))
             }
         }
     }

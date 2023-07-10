@@ -27,7 +27,7 @@ interface ApiClient {
             .setLenient()
             .create()
 
-        private var url = "http://192.168.1.181/android/"
+        private var url = "http://192.168.170.172/android/"
         var apiInterface: ApiClient = Retrofit.Builder()
             .client(okHttpClient)
             .baseUrl(url)
