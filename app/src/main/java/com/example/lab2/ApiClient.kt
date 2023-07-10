@@ -23,8 +23,8 @@ interface ApiClient {
             .callTimeout(1500L, TimeUnit.MILLISECONDS)
             .readTimeout(1500L, TimeUnit.MILLISECONDS)
             .build()
-        var gson: Gson = GsonBuilder()
-            .setLenient( )
+        private var gson: Gson = GsonBuilder()
+            .setLenient()
             .create()
 
         private var url = "http://192.168.1.181/android/"
@@ -36,8 +36,24 @@ interface ApiClient {
     }
 
     @GET("lab2.1.php")
-    fun getApiLab2_1(@Query("name") name: String, @Query("score") score: String ): Call<ResponseBody>
+    fun getApiLab2_1(@Query("name") name: String, @Query("score") score: String): Call<ResponseBody>
 
     @GET("lab2.2.php")
-    fun getApiLab2_2(@Query("length") length: String, @Query("width") width: String): Call<ResponseBody>
- }
+    fun getApiLab2_2(
+        @Query("length") length: String,
+        @Query("width") width: String
+    ): Call<ResponseBody>
+
+    @POST("lab2.3.php")
+    fun getApiLab2_3(
+        @Field("canh") canh: String,
+
+    ): Call<ResponseBody>
+    @GET("lab2.4.php")
+    fun getApiLab2_4(
+        @Field("a") a: String,
+        @Field("b") b: String,
+        @Field("c") c: String,
+
+        ): Call<ResponseBody>
+}

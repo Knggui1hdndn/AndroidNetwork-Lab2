@@ -35,4 +35,30 @@ class ApiClientPresenter(val view:ApiContract.View):ApiContract.Presenter {
 
     }
 
+    override fun getApiLab2_3(canh: String) {
+        ApiClient.apiInterface.getApiLab2_3(canh).enqueue(object :Callback<ResponseBody>{
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) view.onSuccess(response.body()!!.string() )
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                view.onFailure(t.message.toString())
+            }
+
+        })
+    }
+
+    override fun getApiLab2_4(a: String, b: String, c: String) {
+        ApiClient.apiInterface.getApiLab2_4(a,b,c).enqueue(object :Callback<ResponseBody>{
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) view.onSuccess(response.body()!!.string() )
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                view.onFailure(t.message.toString())
+            }
+
+        })
+    }
+
 }
