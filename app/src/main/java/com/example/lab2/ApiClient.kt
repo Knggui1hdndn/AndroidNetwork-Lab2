@@ -28,35 +28,40 @@ interface ApiClient {
             .setLenient()
             .create()
 
-        private var url = "http://192.168.170.172/android/"
+        private var url = "http://192.168.1.181/android/"
         var apiInterface: ApiClient = Retrofit.Builder()
             .client(okHttpClient)
             .baseUrl(url)
-            .addConverterFactory(GsonConverterFactory.create(gson)).build()
+            .addConverterFactory(
+                GsonConverterFactory.create(gson)
+            )
+            .build()
             .create(ApiClient::class.java)
     }
 
     @GET("lab2.1.php")
     fun getApiLab2_1(
         @Query("name") name: String,
-        @Query("score") score: String)
-    : Call<ResponseBody>
+        @Query("score") score: String
+    ): Call<ResponseBody>
 
     @GET("lab2.2.php")
     fun getApiLab2_2(
         @Query("length") length: String,
         @Query("width") width: String
     ): Call<ResponseBody>
+
     @FormUrlEncoded
     @POST("lab2.3.php")
     fun getApiLab2_3(
         @Field("canh") canh: String,
     ): Call<ResponseBody>
+
     @FormUrlEncoded
     @POST("lab2.4.php")
     fun getApiLab2_4(
         @Field("a") a: String,
         @Field("b") b: String,
         @Field("c") c: String,
-        ): Call<ResponseBody>
+    ): Call<ResponseBody>
 }

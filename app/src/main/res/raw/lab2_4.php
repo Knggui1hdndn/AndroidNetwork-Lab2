@@ -15,10 +15,14 @@
  	if ($delta<0) {
        $rs="PT vo nghiem" ;
 	}else{
-	if ($delta==0) {
+	if ($delta!=0) {
 		$x1=((-$b+sqrt($delta))/(2 * $a));
 		$x2=((-$b-sqrt($delta))/(2 * $a));
 		$rs="PT co hai nghiem phan biet : x1= ".$x1."; x2= ".$x2;
+	}else{
+		$x=-$b/(2*$a);
+				$rs="PT co nghiem kep :".$x;
+
 	}
  }
 }
