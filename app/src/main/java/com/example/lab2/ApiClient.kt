@@ -36,7 +36,10 @@ interface ApiClient {
     }
 
     @GET("lab2.1.php")
-    fun getApiLab2_1(@Query("name") name: String, @Query("score") score: String): Call<ResponseBody>
+    fun getApiLab2_1(
+        @Query("name") name: String,
+        @Query("score") score: String)
+    : Call<ResponseBody>
 
     @GET("lab2.2.php")
     fun getApiLab2_2(
@@ -47,13 +50,11 @@ interface ApiClient {
     @POST("lab2.3.php")
     fun getApiLab2_3(
         @Field("canh") canh: String,
-
     ): Call<ResponseBody>
-    @GET("lab2.4.php")
+    @POST("lab2.4.php")
     fun getApiLab2_4(
         @Field("a") a: String,
         @Field("b") b: String,
         @Field("c") c: String,
-
         ): Call<ResponseBody>
 }
